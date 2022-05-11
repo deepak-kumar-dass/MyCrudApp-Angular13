@@ -1,0 +1,17 @@
+<div class="container">
+    <h1>View Post</h1>
+    <a href="#" routerLink="/post/index" class="btn btn-primary mb-3">Back</a>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+              <div class="col p-4 d-flex flex-column position-static">
+                <strong class="d-inline-block mb-2 text-primary">ID : #{{ post.id }}</strong>
+                <h3 class="mb-0">{{ post.title }}</h3>
+                <div class="mb-1 text-muted">May 12, 2022</div>
+                <p class="card-text mb-auto">{{ post.body }}</p>
+                <!-- <a href="javscript:void(0);" class="stretched-link">Continue reading</a> -->
+              </div>
+            </div>
+          </div>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+<!-- Header Component added -->
+<app-header></app-header>
+<!-- Body Part :: Start -->
+<div class="container">
+    <h1 class="display-1">Create New Post</h1>
+    <a href="#" routerLink="/post/index" class="btn btn-primary mb-3">Back</a>
+    <div class="row">
+        <div class="col-md-12">
+            <form [formGroup]="form" (ngSubmit)="submit()">
+                <div class="form-group mb-3">
+                    <label for="title" class="form-label">Title:</label>
+                    <input
+                        formControlName="title"
+                        id="title"
+                        type="text"
+                        class="form-control">
+                    <div *ngIf="f['title'].touched && f['title'].invalid" class="text-danger">
+                        <div *ngIf="f['title'].errors && f['title'].errors['required']">Title is required.</div>
+                    </div>
+                </div>
+           
+                <div class="form-group mb-3">
+                    <label for="body" class="form-label">Body</label>
+                    <textarea
+                        formControlName="body"
+                        id="body"
+                        type="text"
+                        class="form-control">
+                    </textarea>
+                    <div *ngIf="f['body'].touched && f['body'].invalid" class="text-danger">
+                        <div *ngIf="f['body'].errors && f['body'].errors['required']">Body is required.</div>
+                    </div>
+                </div>
+                <button class="btn btn-primary mt-2" type="submit" [disabled]="!form.valid">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Body Part :: End -->

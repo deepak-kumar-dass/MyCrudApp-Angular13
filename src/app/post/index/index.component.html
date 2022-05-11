@@ -1,0 +1,37 @@
+<!-- Header Component added -->
+<app-header></app-header>
+<!-- Body Part :: Start -->
+<div class="container">
+    <h1 class="display-1">Angular 13 CRUD APP</h1>
+    <a href="#" routerLink="/post/create/" class="btn btn-success mb-3">Create New Post</a>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Title</th>
+          <th scope="col">Body</th>
+          <th scope="col" width="220px">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let post of posts">
+          <th scope="row">{{ post.id }}</th>
+          <td>{{ post.title }}</td>
+          <td>{{ post.body }}</td>
+          <td>
+            <div class="action d-flex justify-content-start">
+              <a href="#" class="btn btn-primary" [routerLink]="['/post/', post.id, 'view']">
+                <i class="fa fa-eye" aria-hidden="true"></i>
+              </a>
+              <a href="#"  class="ms-3 btn btn-info" [routerLink]="['/post/', post.id, 'edit']">
+                <i class="fa fa-pencil" aria-hidden="true"></i>
+              </a>
+              <button type="button" class="ms-3 btn btn-danger" (click)="deletePost(post.id)">
+                <i class="fa fa-trash-o" aria-hidden="true"></i>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+ </div>
